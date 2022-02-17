@@ -21,10 +21,8 @@ def index(request):
 
 def detalhes(request, contato_id):
     contato = get_object_or_404(Contato, id=contato_id)
-
     if not contato.mostrar:
         raise Http404()
-
     return render(request, 'contatos/detalhes.html', {
         'contato': contato
     })
@@ -36,7 +34,6 @@ def busca(request):
         messages.add_message(request, messages.ERROR, 'Campo de pesquisa não pode ficar vazio')
         return redirect('index')
     campos = Concat('nome', Value(' '), 'sobrenome')
-
     contatos = Contato.objects.annotate(
         nome_completo=campos
     ).filter(
