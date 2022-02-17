@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
-
+{%block titulo%}Dashboard de {{user}} | {%endblock%}
+{% include 'parciais/_messages.html' %}
 {% block conteudo %}
-Dashboard
+<br>
+<h2 class="p-3 mb-2" style="text-align: left;">Olá {{ user.first_name }}, bem vindo.</h2>
 
 {% endblock %}
