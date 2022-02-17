@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 
 {%block conteudo%}
-    <h1 class="p-3 mb-2" style="text-align: center;">Minha agenda</h1>
+    <a href="accounts/login/" class="btn btn-success" role="button">Login</a>
 
+    <h1 class="p-3 mb-2" style="text-align: center;">Minha agenda</h1>
     <table class="table">
       <thead>
         <tr>
@@ -41,4 +42,5 @@
         {% endfor %}
       </ul>
     </nav>
+
 {% endblock %}

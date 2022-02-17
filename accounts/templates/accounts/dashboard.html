@@ -4,5 +4,22 @@
 {% block conteudo %}
 <br>
 <h2 class="p-3 mb-2" style="text-align: left;">Olá {{ user.first_name }}, bem vindo.</h2>
+<h4 class="p-3 mb-2" style="text-align: left;"> Cadastre um novo contato: </h4>
+<br>
+<div class="container">
+    <form action="{% url 'dashboard' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table class="table">
+            {{ form }}
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <br>
+                    <button type="submit" class="btn btn-danger">Enviar</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
 
 {% endblock %}

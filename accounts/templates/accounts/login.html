@@ -29,7 +29,7 @@
 {% else %}
 <p style="text-align: center;">
     Você já está logado com o usuario "{{user}}"
-    <a href="{% url 'logout' %}" > Clique aqui </a> para sair.
+    <a href="{% url 'logout' %}" class="btn btn-danger" role="button">Logout</a>
 </p>
 
 {% endif %}
